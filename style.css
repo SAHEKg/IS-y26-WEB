@@ -5,10 +5,11 @@
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     background-color: var(--main-background);
     font: var(--font);
+    max-width: var(--max-width);
 }
 
 a {
@@ -35,12 +36,6 @@ ul, ol {
     color: var(--bold-1);
 }
 
-.divider {
-    border: none;
-    height: 1px;
-    background-color: var(--divider);
-}
-
 .header {
     background-color: var(--header-background);
     color: var(--bold-1);
@@ -51,10 +46,19 @@ ul, ol {
 
 .header__title_centered {
     text-align: center;
-    margin: var(--spacing-m) 0;
+    margin: var(--spacing-m) 0 0;
 }
 
-.header_menu {
+.nav__menu {
+    position: sticky;
+    top: 0;
+    background-color: var(--header-background);
+    margin: 0;
+    padding: var(--spacing-xs);
+    border-bottom: 1px solid var(--divider);
+}
+
+.nav__menu__selector {
     margin: var(--spacing-s) 0;
     display: flex;
     flex-direction: row;
@@ -90,8 +94,13 @@ ul, ol {
     color: var(--small-text);
 }
 
+.main__banner__image {
+    width: 100%;
+    height: 160px;
+}
+
 .projects__title {
-    margin: var(--spacing-l) var(--spacing-xl) var(--spacing-m);
+    margin: var(--spacing-xl) var(--spacing-xl) var(--spacing-m);
 }
 
 .projects__selector {
@@ -112,6 +121,55 @@ ul, ol {
     padding: var(--spacing-s);
     background-color: var(--bold-1);
     color: var(--header-background);
+}
+
+.table {
+    display: grid;
+    padding: var(--spacing-m) var(--spacing-l);
+}
+
+.table__title {
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    color: var(--bold-2);
+    padding: var(--spacing-m) 0;
+    background-color: var(--header-background);
+}
+
+.table__header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-m) 0;
+    color: white;
+    background-color: var(--header-background);
+}
+
+.table__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-m) 0;
+    color: antiquewhite;
+}
+
+.table .table__row:nth-child(odd) {
+    background-color: dimgray;
+}
+
+.table .table__row:nth-child(even) {
+    background-color: darkslategray;
+}
+
+.table__header__cell {
+    text-align: center;
+    border: 1px solid black;
+    padding: var(--spacing-m) 0;
+}
+
+.table__row__cell {
+    text-align: center;
+    border: 1px solid black;
+    padding: var(--spacing-m) 0;
 }
 
 .projects__suggestion {
@@ -184,6 +242,7 @@ ul, ol {
     padding-bottom: var(--spacing-s);
     box-sizing: border-box;
     padding-right: var(--spacing-xl);
+    border-top: 1px solid var(--divider);
 }
 
 .footer__title {

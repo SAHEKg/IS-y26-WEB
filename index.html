@@ -9,24 +9,25 @@
     <link rel="stylesheet" href="text.css">
     <link rel="stylesheet" href="colour.css">
     <link rel="stylesheet" href="spacing.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 
 <body>
     <header class="header">
         <h1 class="header__title_centered">Портфолио Бэкэнд-разработчика</h1>
-        <nav>
-            <ul class="header_menu">
-                <li><a href="#about">О себе</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav class="nav__menu">
+        <ul class="nav__menu__selector">
+            <li><a href="#about_href">О себе</a></li>
+            <li><a href="#projects_href">Проекты</a></li>
+            <li><a href="#contacts_href">Контакты</a></li>
+        </ul>
+    </nav>
 
-    <hr class="divider">
+    <span id="about_href"></span>
 
-    <main>
-        <section id="about">
+    <main class="main">
+        <section class="about">
             <h2 class="about__title">О себе</h2>
             <div class="about__content">
                 <div class="about__text">
@@ -56,7 +57,13 @@
             </div>
         </section>
 
-        <section id="projects">
+        <div class="main__banner">
+            <img class="main__banner__image" src="banner.jpg" alt="banner">
+        </div>
+
+        <span id="projects_href"></span>
+
+        <section class="projects">
             <h2 class="projects__title">Мои проекты</h2>
             <div class="projects__selector">
                 <table class="projects__element">
@@ -106,6 +113,30 @@
             </div>
         </section>
 
+        <div class="table">
+            <div class="table__title">Долги</div>
+            <div class="table__header">
+                <div class="table__header__cell">Имя</div>
+                <div class="table__header__cell">Сумма долга, Р</div>
+                <div class="table__header__cell">Проценты, Р</div>
+            </div>
+            <div class="table__row">
+                <div class="table__row__cell">Кирилл</div>
+                <div class="table__row__cell">5000</div>
+                <div class="table__row__cell">400</div>
+            </div>
+            <div class="table__row">
+                <div class="table__row__cell">Семен</div>
+                <div class="table__row__cell">2000</div>
+                <div class="table__row__cell">100</div>
+            </div>
+            <div class="table__row">
+                <div class="table__row__cell">Миша</div>
+                <div class="table__row__cell">100000</div>
+                <div class="table__row__cell">6000</div>
+            </div>
+        </div>
+
         <form class="projects__suggestion">
             <fieldset class="projects__suggestion__fieldset">
                 <h3 class="projects__suggestion__title">Предложить проект</h3>
@@ -118,31 +149,15 @@
                     <textarea id="comment" class="comment__input" name="comment" placeholder="МИКРОСЕРВИСЫ" required></textarea>
                 </div>
                 <button class="projects__suggestion__submit" type="submit">Отправить</button>
-                    <!--                <table class="projects__suggestion__table">-->
-<!--                    <tr><th>-->
-<!--                        <h3><strong class="projects__suggestion__title">Предложить проект</strong></h3>-->
-<!--                    </th></tr>-->
-<!--                    <tr><td class="projects__suggestion__email">-->
-<!--                        <label for="email">Ваша почта для связи</label><br>-->
-<!--                        <input type="email" id="email" class="email__input" name="email" placeholder="example@gmail.com" required>-->
-<!--                    </td></tr>-->
-<!--                    <tr><td class="projects__suggestion__comment">-->
-<!--                        <label for="comment">Комментарий</label><br>-->
-<!--                        <textarea id="comment" class="comment__input" name="comment" placeholder="МИКРОСЕРВИСЫ" required></textarea>-->
-<!--                    </td></tr>-->
-<!--                    <tr><td>-->
-<!--                        <button type="submit">Отправить</button>-->
-<!--                    </td></tr>-->
-<!--                </table>-->
             </fieldset>
         </form>
     </main>
 
-    <hr class="divider">
+    <span id="contacts_href"></span>
 
     <footer class="footer">
         <div class="footer__text">
-            <section id="contacts">
+            <section class="contacts">
                 <h2 class="footer__title">Связаться со мной можно:</h2>
                 <div>
                     <ul class="footer__contacts">
