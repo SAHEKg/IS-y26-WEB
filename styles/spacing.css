@@ -1,0 +1,10 @@
+:root {
+    --spacing-xs: 4px;
+    --spacing-s: 8px;
+    --spacing-m: 16px;
+    --spacing-l: 32px;
+    --spacing-xl: 54px;
+    --spacing-header: 160px;
+
+    --max-width: 1024px;
+}
