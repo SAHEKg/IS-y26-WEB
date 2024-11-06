@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="портфолио, программист, бэкэнд, проекты">
@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="../styles/colour.css">
     <link rel="stylesheet" href="../styles/spacing.css">
     <link rel="stylesheet" href="../styles/media.css">
+    <script src="../scripts/slider.js" defer></script>
+    <script>
+        (function() {
+            window.addEventListener('load', () => {
+                alert(`Page load took ${performance.now().toFixed(2)}ms`)
+            })
+        })()
+    </script>
 </head>
 
 <body>
@@ -18,9 +26,9 @@
     </header>
     <nav class="nav__menu">
         <ul class="nav__menu__selector">
-            <li><a href="#about_href">О себе</a></li>
-            <li><a href="#projects_href">Проекты</a></li>
-            <li><a href="#contacts_href">Контакты</a></li>
+            <li><a class="link" href="#about_href">О себе</a></li>
+            <li><a class="link" href="#projects_href">Проекты</a></li>
+            <li><a class="link" href="#contacts_href">Контакты</a></li>
         </ul>
     </nav>
 
@@ -66,76 +74,41 @@
         <section class="projects">
             <h2 class="projects__title">Мои проекты</h2>
             <div class="projects__selector">
-                <table class="projects__element">
-                    <tr class="projects_name">
-                        <th><h3>Консольный прогноз погоды</h3></th>
-                    </tr>
-                    <tr class="projects_technologies">
-                        <td>C++</td>
-                    </tr>
-                    <tr class="projects_description">
-                        <td>Консольное приложение на C++, отправляющее запросы на API прогноза погоды и отрисовывающее результаты в виде таблицы. Есть возможность менять место и количество дней прогноза</td>
-                    </tr>
-                    <tr class="projects_link">
-                        <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Ссылка</a></td>
-                    </tr>
-                </table>
+                <button id="projects__selector__prev" class="project__selector__button projects__selector__prev">❮</button>
+                <div id="projects__selector__list" class="projects__selector__list">
+                    <a class="project__selector__item" href="">
+                        <h3 class="project__item__title">Консольный прогноз погоды</h3>
+                        <div class="project__item__element project__item__divider">C++</div>
+                        <div class="project__item__element">Консольное приложение на C++, отправляющее запросы на API прогноза погоды и отрисовывающее результаты в виде таблицы с ASCII-art артинками для разных погодных условий. Есть возможность менять место и количество дней прогноза</div>
+                    </a>
 
-                <table class="projects__element">
-                    <tr class="projects_name">
-                        <th><h3>Консольный банкомат</h3></th>
-                    </tr>
-                    <tr class="projects_technologies">
-                        <td>C#, PostgreSQL</td>
-                    </tr>
-                    <tr class="projects_description">
-                        <td>Консольное приложение на C#, симулирующее работу банкомата. Написано на гексагональной архитектуре. Можно класть и снимать деньги, смотреть баланс, переводить деньги другим людям. Ошибочные состояния обрабатываются корректно, взаимодействие происходит выбором действий на стрелочками клавиатуры.</td>
-                    </tr>
-                    <tr class="projects_link">
-                        <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Ссылка</a></td>
-                    </tr>
-                </table>
+                    <a class="project__selector__item" href="">
+                        <h3 class="project__item__element project__item__title">Консольный банкомат</h3>
+                        <div class="project__item__element project__item__divider">C#, PostgreSQL</div>
+                        <div class="project__item__element">Консольное приложение на C#, симулирующее работу банкомата. Написано на гексагональной архитектуре. Можно класть и снимать деньги, смотреть баланс, переводить деньги другим людям. Ошибочные состояния обрабатываются корректно, взаимодействие происходит выбором действий на стрелочками клавиатуры</div>
+                    </a>
 
-                <table class="projects__element">
-                    <tr class="projects_name">
-                        <th><h3>Микросервисное приложение хранения котиков</h3></th>
-                    </tr>
-                    <tr class="projects_technologies">
-                        <td>Java, PostgreSQL</td>
-                    </tr>
-                    <tr class="projects_description">
-                        <td>CRUD микросервисное приложение для работы с БД, содержащей информацию о котиках и их владельцах. Разделено на 3 микросервиса - gateway, cats, cat-owners. Принимает http запросы.</td>
-                    </tr>
-                    <tr class="projects_link">
-                        <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Ссылка</a></td>
-                    </tr>
-                </table>
+                    <a class="project__selector__item" href="">
+                        <h3 class="project__item__title">Микросервисное приложение хранения котиков</h3>
+                        <div class="project__item__element project__item__divider">Java, PostgreSQL</div>
+                        <div class="project__item__element">CRUD микросервисное приложение для работы с БД, содержащей информацию о котиках и их владельцах. Разделено на 3 микросервиса - gateway, cats, cat-owners. Принимает http запросы</div>
+                    </a>
+
+                    <a class="project__selector__item" href="">
+                        <h3 class="project__item__title">ААААА АААА АААААААА АААААА</h3>
+                        <div class="project__item__element project__item__divider">C++, C#, PostgreSQL</div>
+                        <div class="project__item__element">Я в своем познании настолько преисполнился, что я как будто бы уже сто триллионов миллиардов лет проживаю на триллионах и триллионах таких же планет, как эта Земля, мне этот мир абсолютно понятен</div>
+                    </a>
+
+                    <a class="project__selector__item" href="">
+                        <h3 class="project__item__title">ААААА АААА АААААААА АААААА</h3>
+                        <div class="project__item__element project__item__divider">C++, C#, PostgreSQL</div>
+                        <div class="project__item__element">Консольное приложение на C++, отправляющее запросы на API прогноза погоды и отрисовывающее результаты в виде таблицы. Есть возможность менять место и количество дней прогноза</div>
+                    </a>
+                </div>
+                <button id="projects__selector__next" class="project__selector__button projects__selector__next">❯</button>
             </div>
         </section>
-
-        <div class="table">
-            <div class="table__title">Долги</div>
-            <div class="table__header">
-                <div class="table__header__cell">Имя</div>
-                <div class="table__header__cell">Сумма долга, Р</div>
-                <div class="table__header__cell">Проценты, Р</div>
-            </div>
-            <div class="table__row">
-                <div class="table__row__cell">Кирилл</div>
-                <div class="table__row__cell">5000</div>
-                <div class="table__row__cell">400</div>
-            </div>
-            <div class="table__row">
-                <div class="table__row__cell">Семен</div>
-                <div class="table__row__cell">2000</div>
-                <div class="table__row__cell">100</div>
-            </div>
-            <div class="table__row">
-                <div class="table__row__cell">Миша</div>
-                <div class="table__row__cell">100000</div>
-                <div class="table__row__cell">6000</div>
-            </div>
-        </div>
 
         <form class="projects__suggestion">
             <fieldset class="projects__suggestion__fieldset">
@@ -161,9 +134,9 @@
                 <h2 class="footer__title">Связаться со мной можно:</h2>
                 <div>
                     <ul class="footer__contacts">
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">example@mail.ru</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Telegram</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Одноклассники</a></li>
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">example@mail.ru</a></li>
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Telegram</a></li>
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Одноклассники</a></li>
                     </ul>
                 </div>
             </section>
