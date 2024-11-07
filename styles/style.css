@@ -50,6 +50,7 @@ ul, ol {
     padding-top: var(--spacing-s);
     padding-bottom: var(--spacing-s);
     box-sizing: border-box;
+    border-bottom: 1px solid var(--divider);
 }
 
 .header__title_centered {
@@ -59,6 +60,7 @@ ul, ol {
 
 .nav__menu {
     position: sticky;
+    z-index: 1;
     top: 0;
     background-color: var(--header-background);
     margin: 0;
@@ -179,6 +181,7 @@ ul, ol {
 
 .project__selector__item:hover {
     filter: brightness(95%);
+    z-index: 0;
 }
 
 .project__item__element {
@@ -326,4 +329,47 @@ ul, ol {
 
 .rights__crossed {
     text-decoration: line-through;
+}
+
+.project__page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.project__main {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.project__main__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    border-right: 1px solid var(--divider);
+    background-color: var(--header-background);
+    align-items: center;
+    padding: var(--spacing-m);
+}
+
+.project__main__nav__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: var(--spacing-s);
+}
+
+.project__nav__link {
+    text-decoration: none;
+    color: var(--small-text);
+}
+
+.project__nav__link:hover {
+    text-decoration: underline;
+    color: var(--bold-1);
+}
+
+.project__nav__link_active {
+    color: var(--bold-2);
 }
