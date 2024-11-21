@@ -241,6 +241,7 @@ ul, ol {
     border-bottom: 1px solid var(--bold-1);
     outline: none;
     color: var(--small-text);
+    width: var(--email);
 }
 
 .projects__suggestion__comment {
@@ -350,23 +351,35 @@ ul, ol {
 .project__main__nav {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     gap: var(--spacing-xl);
     border-right: 1px solid var(--divider);
     background-color: var(--header-background);
     align-items: center;
-    padding: var(--spacing-m);
+    padding: var(--spacing-m) var(--spacing-m) var(--spacing-l);
 }
 
 .project__main__nav__list {
+    height: 100%;
     display: flex;
     flex-direction: column;
     list-style: none;
     gap: var(--spacing-s);
 }
 
+.project__nav__main {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
 .project__nav__link {
     text-decoration: none;
     color: var(--small-text);
+}
+
+.project__nav__share {
+    margin: auto 0 0;
 }
 
 .project__nav__link:hover {
@@ -376,4 +389,96 @@ ul, ol {
 
 .project__nav__link_active {
     color: var(--bold-2);
+}
+
+.project__main__content {
+    padding: var(--spacing-l) var(--spacing-xl) var(--spacing-l) var(--spacing-l);
+}
+
+.project__main__description {
+    color: var(--small-text);
+    margin-bottom: var(--spacing-m);
+}
+
+.project__main__share__info {
+    color: var(--bold-2);
+    display: flex;
+    flex-direction: column;
+}
+
+.project__email__input {
+    margin: 0 0 var(--spacing-s) var(--spacing-s);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--bold-1);
+    outline: none;
+    color: var(--small-text);
+    width: var(--email);
+}
+
+.project__share__amount {
+    margin: 0 0 var(--spacing-s) var(--spacing-s);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--bold-1);
+    outline: none;
+    color: var(--small-text);
+    max-width: var(--spacing-m);
+}
+
+.project__share__info__submit {
+    background-color: var(--bold-2);
+    border: none;
+    border-radius: 8px;
+    padding: var(--spacing-xs) var(--spacing-s);
+    width: max-content;
+    margin: auto;
+    cursor: pointer;
+}
+
+.project__main__share_list {
+    padding: var(--spacing-l) 0 var(--spacing-m);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--spacing-l);
+}
+
+.project__main__share__item {
+    display: flex;
+    gap: var(--spacing-l);
+}
+
+.project__share__item__language {
+    color: var(--bold-2);
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 var(--spacing-m);
+}
+
+.share__item__language {
+    margin: 0 0 0 var(--spacing-s);
+}
+
+.project__share__item__comment {
+    color: var(--bold-2);
+    flex-grow: 1;
+}
+
+.project__share__submit {
+    background-color: var(--bold-2);
+    border: none;
+    border-radius: 8px;
+    padding: var(--spacing-s);
+    width: max-content;
+    margin: auto;
+    cursor: pointer;
+}
+
+.project__share__submit:hover {
+    filter: brightness(90%);
+}
+
+.project__share__submit:active {
+    filter: brightness(75%);
 }
