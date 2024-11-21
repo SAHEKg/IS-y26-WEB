@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="поделиться проектами">
+    <meta name="description" content="Форма, позволяющая поделиться со мной своими проектми">
+    <title>Constructor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/text.css">
+    <link rel="stylesheet" href="../styles/colour.css">
+    <link rel="stylesheet" href="../styles/spacing.css">
+    <link rel="stylesheet" href="../styles/media.css">
+    <script src="../scripts/activeProject.js" defer></script>
+    <script src="../scripts/shareProjects.js" defer></script>
+</head>
+<body>
+<div class="project__page">
+    <header class="header">
+        <h1 class="header__title_centered">Поделиться проектами</h1>
+    </header>
+
+    <main class="project__main">
+        <div class="project__main__nav">
+            <div class="project__nav__main"><a class="link" href="../index.html">← Main page</a></div>
+            <ul class="project__main__nav__list">
+                <li><a class="project__nav__link" href="/IS-y26-WEB/html/weather.html">Прогноз погоды</a></li>
+                <li><a class="project__nav__link" href="/IS-y26-WEB/html/cashMachine.html">Банкомат</a></li>
+                <li><a class="project__nav__link" href="/IS-y26-WEB/html/cats.html">Микросервисы котов</a></li>
+                <li class="project__nav__share"><a class="project__nav__link" href="/IS-y26-WEB/html/constructor.html">Поделиться проектом</a></li>
+            </ul>
+        </div>
+        <div class="project__main__content">
+            <div class="project__main__description">
+                <p>На этой странице вы можете поделиться со мной своими проектами, чтобы обсудить их, обменяться идеями и поработать над ними вместе. Просто укажите количество проектов и заполните информацию о каждом. Список языков для проектов ограничен в силу моих познаний :)</p>
+            </div>
+            <form class="project__main__share__info" id="project__share__info">
+                <div>
+                    <label for="email">Ваша почта для связи:</label>
+                    <input type="email" id="email" class="project__email__input" name="email" placeholder="example@gmail.com" required><br>
+                </div>
+                <div>
+                    <label for="project__share__amount">Количество проектов:</label>
+                    <input type="text" id="project__share__amount" class="project__share__amount" name="project__share__amount" placeholder="1" maxlength="1" pattern="[0-9]" required>
+                </div>
+                <button class="project__share__info__submit" type="submit">Ok</button>
+            </form>
+            <form class="project__main__share_list" id="project__share__list">
+<!--                <div class="project__main__share__item">-->
+<!--                    <div class="project__share__item__language">-->
+<!--                        <label for="share__item__language">Язык</label>-->
+<!--                        <select id="share__item__language" class="share__item__language" name="share__item__language">-->
+<!--                            <option value="C#">C#</option>-->
+<!--                            <option value="C++">C++</option>-->
+<!--                            <option value="JAVA">Java</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!--                    <div class="project__share__item__comment">-->
+<!--                        <label for="comment">Описание</label><br>-->
+<!--                        <textarea id="comment" class="comment__input" name="comment" placeholder="МИКРОСЕРВИСЫ" required></textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <button class="project__share__submit" type="submit">Отправить</button>-->
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__text">
+            <section class="contacts">
+                <h2 class="footer__title">Связаться со мной можно:</h2>
+                <div>
+                    <ul class="footer__contacts">
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">example@mail.ru</a></li>
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Telegram</a></li>
+                        <li><a class="link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Одноклассники</a></li>
+                    </ul>
+                </div>
+            </section>
+            <aside class="rights">
+                <p>©Я<sup class="rights__sup">мы</sup><sub class="rights__sub">Александр</sub><span class="rights__crossed">прав нет</span></p>
+            </aside>
+        </div>
+        <div class="footer__logo">
+            <img class="footer__logo__image" src="../images/logo.png" alt="logo">
+        </div>
+    </footer>
+</div>
+</body>
+</html>
