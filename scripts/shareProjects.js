@@ -72,12 +72,15 @@ if (savedParams) {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    const formData = new FormData(form)
+    const params = Object.fromEntries(formData.entries())
+    localStorage.setItem('projectShareInfo', JSON.stringify(params));
+
     while (resultDiv.firstChild) {
         resultDiv.removeChild(resultDiv.firstChild);
     }
 
-    const formData = new FormData(form)
-    const params = Object.fromEntries(formData.entries())
     for (let i = 0; i < params.project__share__amount; i++) {
         createSharedProjectElement(i);
     }
