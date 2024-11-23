@@ -57,8 +57,41 @@ function createSharedProjectsSubmit() {
     resultDiv.appendChild(button);
 }
 
+function fillSharedProjects(amount) {
+    for (let i = 0; i < amount; i++) {
+        createSharedProjectElement(i);
+    }
+    createSharedProjectsSubmit();
+}
+
+function addSharedProjectItemInputListeners(amount) {
+    for (let i = 0; i < amount; i++) {
+        const languageId = languageIdBase + i;
+        const descriptionId = descriptionIdBase + i;
+        document.getElementById(languageId).addEventListener('change', (event) => {
+            localStorage.setItem(storageLanguageBase + i, event.target.value);
+        })
+        document.getElementById(descriptionId).addEventListener('input', (event) => {
+            localStorage.setItem(storageDescriptionBase + i, event.target.value);
+        })
+    }
+}
+
+function fillSavedSharedProjectItems(amount) {
+    for (let i = 0; i < amount; i++) {
+        const languageId = languageIdBase + i;
+        const descriptionId = descriptionIdBase + i;
+        document.getElementById(languageId).value = localStorage.getItem(storageLanguageBase + i);
+        document.getElementById(descriptionId).value = localStorage.getItem(storageDescriptionBase + i);
+    }
+}
+
 const form = document.getElementById('project__share__info')
 const resultDiv = document.getElementById('project__share__list')
+const languageIdBase = 'share__item__language';
+const descriptionIdBase = 'comment';
+const storageLanguageBase = 'projectShareLanguage';
+const storageDescriptionBase = 'projectShareDescription';
 
 const savedParams = JSON.parse(localStorage.getItem('projectShareInfo'))
 if (savedParams) {
@@ -68,6 +101,9 @@ if (savedParams) {
             formField.value = value;
         }
     })
+    fillSharedProjects(savedParams.project__share__amount);
+    fillSavedSharedProjectItems(savedParams.project__share__amount);
+    addSharedProjectItemInputListeners(savedParams.project__share__amount);
 }
 
 form.addEventListener('submit', (event) => {
@@ -81,8 +117,9 @@ form.addEventListener('submit', (event) => {
         resultDiv.removeChild(resultDiv.firstChild);
     }
 
-    for (let i = 0; i < params.project__share__amount; i++) {
-        createSharedProjectElement(i);
-    }
-    createSharedProjectsSubmit();
+    fillSharedProjects(params.project__share__amount)
+})
+
+resultDiv.addEventListener('submit', (event) => {
+    localStorage.removeItem('projectShareInfo');
 })
