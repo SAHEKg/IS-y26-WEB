@@ -86,6 +86,13 @@ function fillSavedSharedProjectItems(amount) {
     }
 }
 
+function clearSavedSharedProjectItems(amount) {
+    for (let i = 0; i < amount; i++) {
+        localStorage.removeItem(storageLanguageBase + i);
+        localStorage.removeItem(storageDescriptionBase + i);
+    }
+}
+
 const form = document.getElementById('project__share__info')
 const resultDiv = document.getElementById('project__share__list')
 const languageIdBase = 'share__item__language';
@@ -121,5 +128,6 @@ form.addEventListener('submit', (event) => {
 })
 
 resultDiv.addEventListener('submit', (event) => {
+    clearSavedSharedProjectItems(JSON.parse(localStorage.getItem('projectShareInfo')).project__share__amount)
     localStorage.removeItem('projectShareInfo');
 })
