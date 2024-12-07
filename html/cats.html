@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../styles/spacing.css">
     <link rel="stylesheet" href="../styles/media.css">
     <script src="../scripts/activeProject.js" defer></script>
+    <script src="../scripts/loadProjectContent.js" defer></script>
 </head>
 
 <body>
@@ -33,7 +34,15 @@
             </ul>
         </div>
         <div class="project__main__content">
-            f
+            <div class="preloader">
+                <img class="loading__gif" src="../images/loading.gif">
+                Загрузка данных
+            </div>
+            <div class="error__message">⚠ Что-то пошло не так</div>
+            <div class="content__payload">
+                <div id="main__content__gallery" class="main__content__gallery"></div>
+                <div class="main__content__description">ыыыы ыыы ыыыы ыыыы</div>
+            </div>
         </div>
     </main>
 
