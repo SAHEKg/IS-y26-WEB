@@ -336,6 +336,30 @@ ul, ol {
     text-decoration: line-through;
 }
 
+.swal-modal {
+    background-color: var(--main-background);
+}
+
+.swal-icon {
+    height: auto;
+    width: 240px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.swal-title {
+    color: var(--bold-2);
+}
+
+.swal-text {
+    color: var(--small-text);
+}
+
+.swal-button {
+    color: var(--header-background);
+    background-color: var(--bold-1);
+}
+
 .project__page {
     display: flex;
     flex-direction: column;
